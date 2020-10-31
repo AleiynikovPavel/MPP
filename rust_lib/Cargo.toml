@@ -1,0 +1,14 @@
+[package]
+name = "libmpp"
+version = "0.1.0"
+authors = ["pavel <ghty98@gmail.com>"]
+edition = "2018"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+jni = "0.18.0"
+rayon = "1.5"
+
+[lib]
+crate_type = ["cdylib"]
