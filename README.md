@@ -2,8 +2,8 @@
 ### О проекте
 Реализована библиотека на Rust, которую можно вызывать из Java кода через JNI. Библиотека предоставляет 3 метода. Все они принимают массив целых чисел, выбрают числа, которе являются идеальным квадратом и возвращают их сумму.
 - `int sumPerfectSquare(int [] arr)` - метод выполняет операцию в один поток
-- `int sumPerfectSquarePar(int [] arr)` - метод выполняет операцию в несколько потоков
-- `int sumPerfectSquarePar(int [] arr, int thread_count)` - метод использует thread_count потоков для выполнения операции
+- `int sumPerfectSquarePar(int [] arr)` - метод выполняет операцию в несколько потоков (Используется библиотека [Rayon](https://github.com/rayon-rs/rayon))
+- `int sumPerfectSquarePar(int [] arr, int thread_count)` - метод использует thread_count потоков для выполнения операции (Используется библиотека [Rayon](https://github.com/rayon-rs/rayon))
 
 ### Сборка
 #### Библиотека (Rust)
