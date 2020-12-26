@@ -18,9 +18,6 @@ pub extern "system" fn Java_com_company_RustJni_sumPerfectSquare(env: JNIEnv,
         env.get_int_array_region(input, 0,  &mut vec).expect("Couldn't get java array!");
     let now = SystemTime::now();
     let sum = vec.iter()
-        .filter(|&&x| {
-            (x as f32).sqrt().round().powi(2) == x as f32
-        })
         .sum();
     match now.elapsed() {
         Ok(elapsed) => {
@@ -44,9 +41,6 @@ pub extern "system" fn Java_com_company_RustJni_sumPerfectSquarePar___3I(env: JN
     env.get_int_array_region(input, 0,  &mut vec).expect("Couldn't get java array!");
     let now = SystemTime::now();
     let sum = vec.par_iter()
-        .filter(|&&x| {
-            (x as f32).sqrt().round().powi(2) == x as f32
-        })
         .sum();
     match now.elapsed() {
         Ok(elapsed) => {
@@ -72,9 +66,6 @@ pub extern "system" fn Java_com_company_RustJni_sumPerfectSquarePar___3II(env: J
     let now = SystemTime::now();
     let sum = pool.install(|| {
         vec.par_iter()
-            .filter(|&&x| {
-                (x as f32).sqrt().round().powi(2) == x as f32
-            })
             .sum()
     });
     match now.elapsed() {

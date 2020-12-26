@@ -13,8 +13,13 @@ class RustJni {
     }
 
     public static void main(String[] args) {
-        System.out.println(RustJni.sumPerfectSquare(new int[] {1, 2, 3, 4, 5, 6, 7, 8, 9, 10}));
-        System.out.println(RustJni.sumPerfectSquarePar(new int[] {1, 2, 3, 4, 5, 6, 7, 8, 9, 10}));
-        System.out.println(RustJni.sumPerfectSquarePar(new int[] {1, 2, 3, 4, 5, 6, 7, 8, 9, 10}, 2));
+        int N = 1_000_000;
+        int [] arr = new int [N];
+        for (int i = 0; i < N; i++) {
+            arr[i] = 1;
+        }
+        System.out.println(RustJni.sumPerfectSquare(arr));
+        System.out.println(RustJni.sumPerfectSquarePar(arr));
+        System.out.println(RustJni.sumPerfectSquarePar(arr, 2));
     }
 }
